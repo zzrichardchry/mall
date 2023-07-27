@@ -23,4 +23,5 @@ buildNumber.properties
 **/target/
 .idea
 **/.gitignore
+**/mall-product.iml
 
