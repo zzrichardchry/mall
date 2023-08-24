@@ -1,4 +1,4 @@
-package com.rick.member.mallmember;
+package com.rick.mall.member.mallmember;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
