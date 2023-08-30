@@ -25,6 +25,11 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * 4) 配置集分组：
  * 		默认所有的配置集都属于 DEFAULT_GROUP：1111，618，1212
  * 项目中的使用：每个微服务创建自己的命名空间，使用配置分组区分环境，dev，test，prod
+ *
+ * 3. 同时加载多个配置集：
+ * 1) 微服务的任何配置信息，配置文件都可以放在配置中心
+ * 2) 只需要在 bootstrap.properties 中说明加载配置中心哪些配置文件即可
+ * 3) @Value, @ConfigurationProperties... 以前 SpringBoot 中任何方式从配置文件中获取值都能使用。
  */
 @MapperScan("com.rick.mall.coupon.dao")
 @SpringBootApplication
