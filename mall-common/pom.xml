@@ -65,6 +65,12 @@
             <version>4.0.0</version>
         </dependency>
 
+        <!--解决验证码503错误，原因是SpringBoot版本过高-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+            <version>3.1.7</version>
+        </dependency>
 
     </dependencies>
 

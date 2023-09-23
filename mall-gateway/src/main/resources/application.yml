@@ -10,3 +10,11 @@ spring:
           uri: https://www.baidu.com
           predicates:
             - Query=url,baidu
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+## 前段项目，都带上 /api 前缀
+## http://localhost:88/api/captcha.jpg  -> http://renren-fast:8080/api/captcha.jpg 真正路径是 http://localhost:8080/renren-fast/captcha.jpg
