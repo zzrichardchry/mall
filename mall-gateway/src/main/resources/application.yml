@@ -6,10 +6,19 @@ spring:
           uri: https://www.google.com
           predicates:
             - Query=url,google
+
         - id: baidu_route
           uri: https://www.baidu.com
           predicates:
             - Query=url,baidu
+        # 优先级更高，因为这是更精确的路由匹配规则
+        - id: product_route
+          uri: lb://mall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+        # 优先级更低，因为这是更模糊的路由匹配规则
         - id: admin_route
           uri: lb://renren-fast
           predicates:
